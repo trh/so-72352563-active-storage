@@ -25,6 +25,15 @@
     <%= form.label :content, style: "display: block" %>
     <%= form.rich_text_area :content %>
   </div>
+
+  <div class="flex">
+    <div>
+      <%- if animal.image.present? %>
+        <%= image_tag animal.image %>
+    </div>
+  <% else %>
+    <div> Upload an image </div>
+  <% end %>
   <div>
     <%= form.label :image, style: "display: block" %>
     <%= form.file_field :image %>

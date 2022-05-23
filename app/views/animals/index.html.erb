@@ -2,13 +2,23 @@
 
 <h1>Animals</h1>
 
-<div id="animals">
+<div id="animals" class="animal-cards">
   <% @animals.each do |animal| %>
+    <article>
     <%= render animal %>
-    <p>
-      <%= link_to "Show this animal", animal %>
-    </p>
+    <%= link_to "Show this animal", animal %>
+    </article>
   <% end %>
 </div>
 
 <%= link_to "New animal", new_animal_path %>
+             
+<style>
+.animal-cards  { 
+  display: flex;
+flex-wrap:  wrap;
+
+  gap: 50px 20px; /* row-gap column gap */
+}
+.animal-cards article { width: 100%; max-width: 200px; }
+</style>

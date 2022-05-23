@@ -1,19 +1,30 @@
 <div id="<%= dom_id animal %>">
-  <p>
-    <strong>Name:</strong>
+  <header>
+  <strong>
     <%= animal.name %>
-  </p>
+  </strong>
+  </header>
 
-  <p>
-    <strong>Link:</strong>
-    <%= animal.link %>
-  </p>
-  <p>
-    <strong>Description:</strong>
-    <%= animal.content %>
-  </p>
-  <p>
-    <%= image_tag animal.image.variant(resize_to_limit: [100, 100]) %>
+  <div class='article-body'>
+  <%- if animal.link %>
+    <strong>
+      <%= link_to 'Link', animal.link %>
+    </strong>
+  <%else %>
+    <em> No link </em>
+  <% end%>
+  </div>
+  <div>
+  <strong>Info:</strong>
+  <%- if animal.content.present? %>
+    <%= animal.content  %>
+  <% else %>
+    <p><em> No info availalbe </em></p>
+  <% end %>
+  </div>
+  <div>
+  <%= image_tag animal.image.variant(resize_to_limit: [100, 100]) %>
+  </div>
 
-  </p>
 </div>
+
