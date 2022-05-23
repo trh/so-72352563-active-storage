@@ -32,4 +32,4 @@ An example application to show rails 7 + active storage + action text + vips
 
 # View
 
-[http://lvh.me:3000]()
+[View your page](http://lvh.me:3000)
