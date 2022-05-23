@@ -1,0 +1,19 @@
+<div id="<%= dom_id animal %>">
+  <p>
+    <strong>Name:</strong>
+    <%= animal.name %>
+  </p>
+
+  <p>
+    <strong>Link:</strong>
+    <%= animal.link %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= animal.content %>
+  </p>
+  <p>
+    <%= image_tag animal.image.variant(resize_to_limit: [100, 100]) %>
+
+  </p>
+</div>
